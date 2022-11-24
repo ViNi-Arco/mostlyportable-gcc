@@ -710,7 +710,6 @@ _nowhere="$PWD"
         --libexecdir="${_dstdir}/usr/lib" \
         --with-lib-path="${_dstdir}/usr/lib" \
         ${_gcc_lang_args} \
-        --with-gcc-major-version-only \
         --prefix="${_dstdir}/usr" \
         --with-isl="${_dstdir}"/usr \
         --with-gmp="${_dstdir}"/usr \
