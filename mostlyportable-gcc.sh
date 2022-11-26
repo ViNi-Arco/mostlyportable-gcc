@@ -750,8 +750,6 @@ _nowhere="$PWD"
       make -C gcc install-po
       make -C x86_64-pc-linux-gnu/libgcc install-shared
       make -C x86_64-pc-linux-gnu/32/libgcc install-shared
-      rm -f "${_dstdir}/usr/lib/gcc/x86_64-pc-linux-gnu/${_gcc_version}/libgcc_eh.a"
-      rm -f "${_dstdir}/usr/lib/gcc/x86_64-pc-linux-gnu/${_gcc_version}/32/libgcc_eh.a"
       for lib in libatomic \
            libgomp \
            libitm \
