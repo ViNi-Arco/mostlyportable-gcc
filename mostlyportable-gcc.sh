@@ -448,7 +448,7 @@ _nowhere="$PWD"
           --enable-sdk=all \
           --enable-secure-api \
           --host="${_target}" \
-          --prefix="${_dstdir}/usr"/"${_target}"
+          --prefix="${_dstdir}/usr/${_target}"
         make || exit 1
       done
       for _target in ${_targets}; do
@@ -529,8 +529,8 @@ _nowhere="$PWD"
           --host="${_target}" \
           --enable-wildcard \
           ${_crt_configure_args} \
-          --with-sysroot="${_dstdir}/usr"/"${_target}" \
-          --prefix="${_dstdir}/usr"/"${_target}"
+          --with-sysroot="${_dstdir}/usr/${_target}" \
+          --prefix="${_dstdir}/usr/${_target}"
         # binutils 2.38 - disable parallel build preventing mingw compilation
         if [[ "$_binutils" = 2.38* ]]; then
           make -j1 || exit 1
@@ -550,7 +550,7 @@ _nowhere="$PWD"
         mkdir -p "${_nowhere}"/build/winpthreads-build-"${_target}" && cd "${_nowhere}"/build/winpthreads-build-"${_target}"
         PATH="${_path_hack}" "${_nowhere}"/build/"${_mingw_path}"/mingw-w64-libraries/winpthreads/configure \
           --host="${_target}" \
-          --prefix="${_dstdir}/usr"/"${_target}" \
+          --prefix="${_dstdir}/usr/${_target}" \
           ${_commonconfig}
         make -j$(nproc) || exit 1
       done
